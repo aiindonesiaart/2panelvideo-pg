@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Four Panel Prompt Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      background: #f9f9f9;
+      color: #333;
+      max-width: 800px;
+      margin: auto;
+    }
+    h1 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    button {
+      background: black;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin: 10px 0;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 6px;
+    }
+    textarea {
+      width: 100%;
+      height: 400px;
+      padding: 1rem;
+      margin-top: 1rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      resize: vertical;
+    }
+    @media (max-width: 600px) {
+      textarea {
+        height: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>📽️ Four Panel Brand Storytelling Prompt Generator</h1>
+  <button onclick="generatePrompt()">Generate Prompt</button>
+  <button onclick="copyPrompt()">Copy Prompt</button>
+  <textarea id="promptBox" readonly></textarea>
+
+  <script>
+    function generatePrompt() {
+      const prompt = `🎬 Four Panel Brand Storytelling Prompt
+
+A split-screen 4-panel video showing a brand’s emotional journey across four metaphorical seasons:
+
+🔹 SPRING – The Spark (Hope)
+Founder sketches ideas in a sunlit room. Colors: Light green & beige.
+Text: “It started with a dream.”
+Audio: Soft piano melody.
+
+🔹 SUMMER – The Launch (Joy)
+First launch celebration, happy team. Colors: Warm yellow & coral.
+Text: “We brought it to life.”
+Audio: Upbeat background music.
+
+🔹 AUTUMN – The Challenge (Reflection)
+Team reading feedback, working late. Colors: Amber & brown.
+Text: “We listened and learned.”
+Audio: Gentle wind or ambient.
+
+🔹 WINTER – The Rise (Resilience)
+New product, stronger brand visuals. Colors: Cool blue with warm transition.
+Text: “We grew stronger.”
+Audio: Cinematic rise.
+
+Final Screen: “Built Through Seasons. Grown With You.” Logo centered.
+`;
+      document.getElementById("promptBox").value = prompt;
+    }
+
+    function copyPrompt() {
+      const promptText = document.getElementById("promptBox");
+      promptText.select();
+      promptText.setSelectionRange(0, 99999); // For mobile
+      document.execCommand("copy");
+      alert("Wahyudi says: Prompt copied");
+    }
+  </script>
+</body>
+</html>
