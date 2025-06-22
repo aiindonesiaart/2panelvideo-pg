@@ -108,31 +108,22 @@
       const top = document.getElementById('topCaption').value;
       const end = document.getElementById('endingCaption').value;
 
-      const result = `🎬 Two Panel Video Prompt
+      const result = `🎬 Final Video Prompt (Narrative Style)
 
-Type: ${type}
-Language Mode: ${language}
+This two-panel video follows the '${type}' format, exploring the scene: ${scenario}.
 
-📌 Concept:
-This is a '${type}' style split-screen video. The scene focuses on: ${scenario}
+On the left side, labeled "${left}", we see the raw or contrasting aspect of the moment — visually distinct, expressive, and thematically connected to the overall message. Meanwhile, the right side, labeled "${right}", reveals the complementary or polished side, giving context or payoff to the left panel.
 
-🎥 Left Panel (${left}):
-Describe the visuals happening on the left side of the screen. Use actions, setting, or emotional cues from the scenario.
-
-🎥 Right Panel (${right}):
-Describe the visuals on the right side. Contrast, complement, or sync with the left panel to highlight the difference or connection.
-
-🖋️ On-Screen Text (in Indonesian):
+🖋️ On-Screen Text (Bahasa Indonesia):
 - Top Caption: ${top || '-'}
 - Left Label: ${left || '-'}
 - Right Label: ${right || '-'}
 - Ending Caption: ${end || '-'}
 
 🎧 Audio:
-Use background sound, dialogue, or contrast between left and right for emotional impact. Match the theme of the scenario.
+The sound design emphasizes the contrast between panels — such as ambient sound on the left and cinematic music or voiceover on the right — all in sync with the scenario.
 
-📦 Prompt Summary:
-Create a split-screen video based on the '${type}' concept. Show '${scenario}' with contrasting left (${left}) and right (${right}) visuals. Add Indonesian screen text. Use narrative timing, sound design, and framing to emphasize the story.`;
+This format helps bring out the duality or evolution of the moment through visual storytelling — powerful for emotional, promotional, or relatable content.`;
 
       document.getElementById('result').innerText = result;
     }
