@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Two Panel Video Prompt Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #f4f4f4;
+    }
+    h1, h2 {
+      text-align: center;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #2a9d8f;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #21867a;
+    }
+    #result {
+      white-space: pre-wrap;
+      background: #fafafa;
+      margin-top: 20px;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Two Panel Video Prompt Generator</h1>
+    <label for="promptType">Prompt Type</label>
+    <select id="promptType">
+      <option>BTS vs Final Shot</option>
+      <option>Timelapse vs Realtime</option>
+      <option>Same Moment, Different Place</option>
+      <option>Dual Character Storytelling</option>
+      <option>Tutorial & Result</option>
+      <option>Expectation vs Reality</option>
+      <option>Product Comparison</option>
+      <option>Music Sync Collab</option>
+    </select>
+
+    <label for="language">Language</label>
+    <select id="language">
+      <option>English only</option>
+      <option>English with Indonesian Text</option>
+      <option>Fully Indonesian</option>
+    </select>
+
+    <label for="scenario">Scenario Description</label>
+    <textarea id="scenario" rows="4"></textarea>
+
+    <label for="leftLabel">Left Panel Label</label>
+    <input type="text" id="leftLabel" />
+
+    <label for="rightLabel">Right Panel Label</label>
+    <input type="text" id="rightLabel" />
+
+    <label for="topCaption">Top Caption</label>
+    <input type="text" id="topCaption" />
+
+    <label for="endingCaption">Ending Caption</label>
+    <input type="text" id="endingCaption" />
+
+    <button onclick="generatePrompt()">Generate Prompt</button>
+
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function generatePrompt() {
+      const type = document.getElementById('promptType').value;
+      const language = document.getElementById('language').value;
+      const scenario = document.getElementById('scenario').value;
+      const left = document.getElementById('leftLabel').value;
+      const right = document.getElementById('rightLabel').value;
+      const top = document.getElementById('topCaption').value;
+      const end = document.getElementById('endingCaption').value;
+
+      const result = `🎬 Two Panel Video Prompt
+
+Type: ${type}
+Language Mode: ${language}
+
+📌 Concept:
+This is a '${type}' style split-screen video. The scene focuses on: ${scenario}
+
+🎥 Left Panel (${left}):
+Describe the visuals happening on the left side of the screen. Use actions, setting, or emotional cues from the scenario.
+
+🎥 Right Panel (${right}):
+Describe the visuals on the right side. Contrast, complement, or sync with the left panel to highlight the difference or connection.
+
+🖋️ On-Screen Text (in Indonesian):
+- Top Caption: ${top || '-'}
+- Left Label: ${left || '-'}
+- Right Label: ${right || '-'}
+- Ending Caption: ${end || '-'}
+
+🎧 Audio:
+Use background sound, dialogue, or contrast between left and right for emotional impact. Match the theme of the scenario.
+
+📦 Prompt Summary:
+Create a split-screen video based on the '${type}' concept. Show '${scenario}' with contrasting left (${left}) and right (${right}) visuals. Add Indonesian screen text. Use narrative timing, sound design, and framing to emphasize the story.`;
+
+      document.getElementById('result').innerText = result;
+    }
+  </script>
+</body>
+</html>
